@@ -1,0 +1,38 @@
+//Aprendimos acerca del uso de APIs y librerias
+
+//Ejercicio 1
+import kotlin.math.*
+
+fun calculateCompoundInterest(P: Double, r: Double, n: Int, t: Int): Double {
+    return P * (1 + r / n).pow(n * t)
+}
+
+fun main() {
+    val principal = 1000.0
+    val rate = 0.05
+    val timesCompounded = 4
+    val years = 5
+    val amount = calculateCompoundInterest(principal, rate, timesCompounded, years)
+    println("The accumulated amount is: $amount")
+    // The accumulated amount is: 1282.0372317085844
+}
+
+//Ejercicio 2
+import kotlin.time.measureTime
+
+fun main() {
+    val timeTaken = measureTime {
+        // Simulate some data processing
+        val data = List(1000) { it * 2 }
+        val filteredData = data.filter { it % 3 == 0 }
+
+        // Simulate processing the filtered data
+        val processedData = filteredData.map { it / 2 }
+        println("Processed data")
+    }
+
+    println("Time taken: $timeTaken") // e.g. 16 ms
+}
+
+//Ejercicio 3
+@OptIn(ExperimentalStdlibApi::class)
